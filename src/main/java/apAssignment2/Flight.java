@@ -7,21 +7,32 @@ package apAssignment2;
  * @author shoaib Asghar
  *
  */
+
 public class Flight 
 {
  
 	 private String Origin;
 	 private String Destination;
-	 private static String [] flight_Date;
-	 private int size=10;
+	 private static String flight_Date;
+	 private int book_seat;
 	 private String CNIC,Passport;
-    
-	 public Flight(String org,String des,String [] date,int siz,String cnic,String pass)
+     
+	 public Flight()
+	 {
+		 Origin=" ";	 
+		 Destination=" ";	
+		 book_seat=0; 
+		 flight_Date=" ";
+		 CNIC=" ";	 
+		 Passport=" ";	 
+		 
+	 }
+	 public Flight(String org,String des,String date,int siz,String cnic,String pass)
 	 {
 		 Origin=org;	 
 		 Destination=des;	
-		 size=siz;
-		 flight_Date[size]=date[size];
+		 book_seat=siz;
+		 flight_Date=date;
 		 CNIC=cnic;	 
 		 Passport=pass;	 
 	 }
@@ -46,14 +57,24 @@ public class Flight
 		 return Destination;	 
      }
 	 
-	 public void setflight_Date(String [] date,int siz) 
+	 public void setflight_Date(String date) 
      {
-		 flight_Date[size]=date[size];
+		 flight_Date=date;
      }
 	 
 	 public String getflight_Date() 
      {
-		return flight_Date[size];
+		return flight_Date;
+     }
+	 
+	 public void setbook_seat(int bookseat) 
+     {
+		 book_seat=bookseat;	 
+     }
+	 
+	 public int getbook_seat() 
+     {
+		 return book_seat;	 
      }
 	 
 	 public void setCNIC(String cnic) 

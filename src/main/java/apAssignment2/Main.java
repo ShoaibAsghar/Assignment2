@@ -8,11 +8,12 @@ public class Main {
         Display obj=new Display();
         obj.Create_File();
         //obj.Read_File();
-       // obj.Input();
-        obj.Write_File();
-      obj.Read_File();
+        obj.Input();
+        //obj.Write_File();
+      //obj.Read_File();
       
 	}
 	
 
 }
+

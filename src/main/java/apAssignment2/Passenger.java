@@ -9,6 +9,16 @@ public class Passenger
    private String Destination;
    private String Type_of_Plane;
    
+   public Passenger()
+   {
+	   Type_of_Plane=" ";	 
+	   name=" ";
+	   gender=" ";
+	   Passport=" ";	 
+	   Address=" ";	
+	   Destination=" ";	
+	   
+   }
    public Passenger(String nam,String gen,String pass,String Add,String des,String plane_type)
    {
 	   Type_of_Plane=plane_type;	 
