@@ -1,6 +1,6 @@
 package apAssignment2;
 
-public class Passenger 
+public class Passenger  
 {
    private String name;
    private String gender;

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.IconifyAction;
+import javax.swing.text.StyledEditorKit.ForegroundAction;
 
 import java.io.BufferedWriter; 
 import java.io.FileWriter; 
@@ -12,7 +13,7 @@ import java.io.PrintWriter;
 import java.lang.invoke.SwitchPoint;
 import java.util.Random;
 
-public class Display {
+public class Display extends Flight {
 	
            public static void Create_File(String Fname) 
            {
@@ -33,7 +34,7 @@ public class Display {
         	  
            }
            
-           public  void Input(String Fname2)
+           public  static void Input(String Fname2)
            {
         	   String Name;
         	   String Gender;
@@ -41,7 +42,8 @@ public class Display {
         	   String address;
         	   String destination;
         	   String type_of_Plane=" ";
-        	   
+        	   int Total_seat=60;
+        	   int availabl_seat=60;
         	     String Origin;
         		 String Destination;
         		 String flight_Date=" ";
@@ -68,6 +70,7 @@ public class Display {
         	    obj2.setname(Name);
         	    int fare=10000;
         	    int total_fare=0;
+        	    int another_record=0;
         	    System.out.println(" ");
         	   
         	    
@@ -82,7 +85,7 @@ public class Display {
         	    System.out.println("Enter your Passport Number : ");
         	    passport = Obj1.nextLine(); 
         	    obj2.setPassport(passport);
-        	    System.out.println("Enter Type plane in strings(Enter your choice) : ");
+        	    System.out.println("Enter Type of plane (Enter your choice) : ");
         	    System.out.println("Enter 1 for Business class!");
         	    System.out.println("Enter 2 for Economy class!");
         	    System.out.println("Enter 3 for First class! ");
@@ -116,103 +119,116 @@ public class Display {
         	    	System.out.println("You entered wrong choice");
         	    }
         	    
-        	  //  type_of_Plane = Obj1.nextLine(); 
-        	    //obj2.setType_of_Plane(type_of_Plane);
-        	    Obj1 = new Scanner(System.in); 
-        	    System.out.println("Enter your Destination (Arrival city)name! ");
-        	    destination=Obj1.nextLine();
-        	    obj2.setDestination(destination);
+        	    String [] flight_Array=new String [10]; 
+        	    flight_Array[0]="Pk701 Islamabad to Lahore! ";
+        	    flight_Array[1]="Pk702 Islamabad to Karachi! ";
+        	    flight_Array[2]="Pk703 Islamabad to Multan! ";
+        	    flight_Array[3]="Pk704 Lahore to Islamabad! ";
+        	    flight_Array[4]="Pk705 Lahore to Karachi! ";
+        	    flight_Array[5]="Pk706 Lahore to Peshawar! ";
+        	    flight_Array[6]="Pk707 Lahore to London! ";
+        	    flight_Array[7]="Pk708 London to Islamabad! ";
+        	    flight_Array[8]="Pk709 London to Manchester! ";
+        	    flight_Array[9]="Pk710 Lahore to Newyork! ";
+        	    
+        	    //
+        	    setflight_schedule(flight_Array); 
         	    
         	    System.out.println("Please Enter correct Flight information! ");
+        	    
+        	    System.out.println(" These are the Available Flights! ");
+        	    for(int i=0; i<10; i++)
+        	    {
+        	    	System.out.println(flight_Array[i]);	
+        	    }
+        	    
+        	    System.out.println(" "); 
         	    System.out.println("Enter your Origin(Departure city) Name : ");
         	    Obj1 = new Scanner(System.in); 
         	    Origin=Obj1.nextLine();
         	    obj3.setorigin(Origin);
         	    
-        	    //System.out.println("Enter your Destination (Arrival city)name :");
-        	    //Destination=Obj1.nextLine();
+        	    Obj1 = new Scanner(System.in); 
+        	    System.out.println("Enter your Destination (Arrival city)name! ");
+        	    destination=Obj1.nextLine();
+        	    obj2.setDestination(destination);
+
         	    Obj1 = new Scanner(System.in); 
         	    obj3.setDestination(destination);
-        	    int choice_date=0;
         	    
-        	    String Date1="24/10/2021";
-        	    String Date2="25/10/2021";
-        	    String Date3="26/10/2021";
-        	    String Date4="27/10/2021";
-        	    String Date5="28/10/2021";
-        	    String Date6="29/10/2021";
-        	    String Date7="30/10/2021";
+        	    
+        	    
+        	    int choice_date=0;
+        	    String [] flight_Date_Array=new String [7]; 
+        	    flight_Date_Array[0]="24/10/2021";
+        	    flight_Date_Array[1]="25/10/2021";
+        	    flight_Date_Array[2]="26/10/2021";
+        	    flight_Date_Array[3]="27/10/2021";
+        	    flight_Date_Array[4]="28/10/2021";
+        	    flight_Date_Array[5]="29/10/2021"; 
+        	    flight_Date_Array[6]="30/10/2021";
+        	    
+        	    setflight_Date(flight_Date_Array); 
+        	    
         	    System.out.println("Please choose correct Date From Available Date!");
-        	    System.out.println("Enter 1 to choose this-> Date "+Date1+" : ");
-        	    System.out.println("Enter 2 to choose this-> Date "+Date2+" : ");
-        	    System.out.println("Enter 3 to choose this-> Date "+Date3+" : ");
-        	    System.out.println("Enter 4 to choose this-> Date "+Date4+" : ");
-        	    System.out.println("Enter 5 to choose this-> Date "+Date5+" : ");
-        	    System.out.println("Enter 6 to choose this-> Date "+Date6+" : ");
-        	    System.out.println("Enter 7 to choose this-> Date "+Date7+" : ");
+        	    System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+" : ");
+        	    System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+" : ");
+        	    System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+" : ");
+        	    System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+" : ");
+        	    System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+" : ");
+        	    System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+" : ");
+        	    System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+" : ");
         	    Obj1 = new Scanner(System.in); 
-        	    //System.out.println("Enter Date of your travel :");
         	    choice_date=Obj1.nextInt();
-        	    //
+        	    
         	    switch (choice_date) 
         	    {
         	    
         	    case 1:
-        	      System.out.println("Monday");
-        	    	flight_Date=Date1;
-            	    obj3.setflight_Date(flight_Date);
+        	    	flight_Date=flight_Date_Array[0];
+            	   //obj3.setflight_Date(flight_Date);
         	      break;
         	      
         	    case 2:
-        	    	flight_Date=Date2;
-            	    obj3.setflight_Date(flight_Date);	
-        	        System.out.println("Tuesday");
+        	    	flight_Date=flight_Date_Array[1];
+            	   //obj3.setflight_Date(flight_Date);	
         	      break;
         	      
         	    case 3:
-        	    	flight_Date=Date3;
-            	    obj3.setflight_Date(flight_Date); 	
-        	        System.out.println("Wednesday");
+        	    	flight_Date=flight_Date_Array[2];
+            	   //obj3.setflight_Date(flight_Date); 	
+        	       
         	      break;
         	      
         	    case 4:
-        	    	flight_Date=Date4;
-            	    obj3.setflight_Date(flight_Date);	
-        	        System.out.println("Thursday");
+        	    	flight_Date=flight_Date_Array[3];
+            	  //obj3.setflight_Date(flight_Date);	
+        	       
         	      break;
         	      
         	    case 5:
-        	    	flight_Date=Date5;
-            	    obj3.setflight_Date(flight_Date);	
-        	        System.out.println("Friday");
+        	    	flight_Date=flight_Date_Array[4];
+            	   //obj3.setflight_Date(flight_Date);	
+        	      
         	      break;
         	      
         	    case 6:
-        	      System.out.println("Saturday");
-        	      flight_Date=Date6;
-          	      obj3.setflight_Date(flight_Date);
+        	    
+        	      flight_Date=flight_Date_Array[5];
+          	    //obj3.setflight_Date(flight_Date);
         	      break;
         	      
         	    case 7:
-        	      System.out.println("Sunday");
-        	      flight_Date=Date7;
-          	      obj3.setflight_Date(flight_Date);
+        	    
+        	      flight_Date=flight_Date_Array[6];
+          	    //obj3.setflight_Date(flight_Date);
         	      break;
         	  }
-        	    //
         	    
         	    
-        	    //flight_Date=Obj1.nextLine();
-        	    //obj3.setflight_Date(flight_Date);
-        	    
-        	    //System.out.println("How many seats you want to book (Enter number): ");
-        	    //book_seat=Obj1.nextInt();
         	    book_seat=1;
         	    obj3.setbook_seat(book_seat);
         	    
-        	    //Obj1 = new Scanner(System.in); 
-        	    //System.out.println("Enter your Passport Number : ");
-        	   // pass = Obj1.nextLine(); 
         	    
         	    obj3.setPassport(passport);
         	    
@@ -231,7 +247,7 @@ public class Display {
         	    Obj1 = new Scanner(System.in); 
         	    ticket_choice=Obj1.nextInt();
         	    int ticket_random=0;
-        	    int seat_random=0;
+        	    int seat_number=0;
         	    int amount=0;
         	    Random rand_num = new Random();
         	     if(ticket_choice==1)
@@ -244,10 +260,12 @@ public class Display {
              	    	
         	         // Generate random integers 
         	         ticket_random = rand_num.nextInt(10000);
-        	         seat_random = rand_num.nextInt(200);
+        	         seat_number=seat_number+1;
         	         System.out.println("Congratulations Your Ticket and generated successfully! ");
         	         System.out.println("Your ticket number is "+ticket_random+" ");
-        	         System.out.println("Your seat number is "+seat_random+" ");
+        	         System.out.println("Your seat number is "+seat_number+" ");
+        	        // Total_seat=60;
+              	      availabl_seat=availabl_seat -1;
         	         
         	        } 
              	    
@@ -276,7 +294,7 @@ public class Display {
          		   fw = new FileWriter(Fname2, true); 
          		   bw = new BufferedWriter(fw);
          		   pw = new PrintWriter(bw); 
-         		   pw.println(Name+" "+Gender+" "+address+" "+passport+" "+ type_of_Plane +" "+destination+" "+Origin+" "+book_seat+" "+flight_Date+" "+CNIC+" "+total_fare+" "+ticket_random+" "+seat_random+" "); 
+         		   pw.println(Name+" "+Gender+" "+address+" "+passport+" "+ type_of_Plane +" "+destination+" "+Origin+" "+seat_number+" "+flight_Date+" "+CNIC+" "+total_fare+" "+ticket_random+" "+Total_seat+" "+availabl_seat+" "); 
          		  // pw.println("Root");
          		  // pw.println("Ben");
          		   System.out.println("Data Successfully appended into file");
@@ -286,8 +304,7 @@ public class Display {
          	   
          	   catch (IOException io) 
      		   {
-     			   // can't do anything 
-     			   //}
+     			   
      		   }
          	   
          	   finally 
@@ -301,17 +318,26 @@ public class Display {
          		   
          		   catch (IOException io) 
          		   {
-         			   // can't do anything 
-         			   //}
+         			   
          		   }
          		   
          		   
          	   }
          	   
-         	   //
+         	   
         	    
-        	    
-        	    
+         	  System.out.println("Do you want to book another seat! ");
+         	  System.out.println("Enter 1 to book for another seat! ");
+         	 System.out.println("Enter 2 to Quit this program! ");
+         	 
+         	 Obj1 = new Scanner(System.in); 
+         	 another_record=Obj1.nextInt();
+         	 
+         	 if (another_record==1)
+         	 {
+         		Input(Fname2);
+         	 }
+         	 
            }
         	 
         	 else
@@ -319,59 +345,10 @@ public class Display {
         		 System.out.println("You do not want to book a flight so system quit!");	 
         	 }
         	 
+        	 
         }  
            
-          /*
-           public static void Write_File()
-           {
-        	   
-        	   FileWriter fw = null; 
-        	   BufferedWriter bw = null;
-        	   PrintWriter pw = null;
-               
-        	   try { 
-        		   fw = new FileWriter("Inputfile.txt", true); 
-        		   bw = new BufferedWriter(fw);
-        		   pw = new PrintWriter(bw); 
-        		   pw.println("Shane"); 
-        		   pw.println("Root");
-        		   pw.println("Ben");
-        		   System.out.println("Data Successfully appended into file");
-        		   pw.flush(); 
-        		   
-        	   }
-        	   
-        	   catch (IOException io) 
-    		   {
-    			   // can't do anything 
-    			   //}
-    		   }
-        	   
-        	   finally 
-        	   {
-        		   try 
-        		   {
-        			   pw.close();
-        			   bw.close();
-        			   fw.close(); 
-        			   }
-        		   
-        		   catch (IOException io) 
-        		   {
-        			   // can't do anything 
-        			   //}
-        		   }
-        		   
-        		   
-        	   }
-        	   
-        	   
-           
-        	   //final
-           
-        	   }
-
-        		*/
+          
            
            
            
@@ -403,7 +380,3 @@ public class Display {
            
            
         
-           
-           
-           
-//}

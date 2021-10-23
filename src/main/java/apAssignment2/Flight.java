@@ -10,10 +10,36 @@ package apAssignment2;
 
 public class Flight 
 {
- 
+     
+	 private Passenger name;
+	  
+	 public void setPassenger(Passenger name) 
+	   {
+			this.name=name;	 
+	   }
+	 
+	 public Passenger getname() 
+	   {
+			 return name;
+	   }
+	 
+	 
+	 /*
+	  public void setAddress(Address address) 
+	  {
+		this.address = address;
+	}
+	
+	public Address getAddress() 
+	{
+		return address;
+	}
+	  */
+	 
 	 private String Origin;
 	 private String Destination;
-	 private static String flight_Date;
+	 private static String[] flight_Date=new String[7];
+	 private static String[] flight_schedule=new String[10];
 	 private int book_seat;
 	 private String CNIC,Passport;
      
@@ -22,12 +48,12 @@ public class Flight
 		 Origin=" ";	 
 		 Destination=" ";	
 		 book_seat=0; 
-		 flight_Date=" ";
+		
 		 CNIC=" ";	 
 		 Passport=" ";	 
 		 
 	 }
-	 public Flight(String org,String des,String date,int siz,String cnic,String pass)
+	 public Flight(String org,String des,String[] date,int siz,String cnic,String pass)
 	 {
 		 Origin=org;	 
 		 Destination=des;	
@@ -36,6 +62,8 @@ public class Flight
 		 CNIC=cnic;	 
 		 Passport=pass;	 
 	 }
+	 
+	 
 	 
 	 public void setorigin(String org) 
      {
@@ -57,12 +85,24 @@ public class Flight
 		 return Destination;	 
      }
 	 
-	 public void setflight_Date(String date) 
+	 public static void setflight_Date(String[] date) 
      {
 		 flight_Date=date;
      }
 	 
-	 public String getflight_Date() 
+	 //
+	 public static void setflight_schedule(String[] schedul) 
+     {
+		 flight_schedule=schedul;
+     }
+	 
+	 public String[] getflight_schedule() 
+     {
+		 return flight_schedule;
+     }
+	 
+	 //
+	 public String[] getflight_Date() 
      {
 		return flight_Date;
      }
