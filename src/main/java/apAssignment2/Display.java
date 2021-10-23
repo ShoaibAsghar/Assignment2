@@ -13,8 +13,17 @@ import java.io.PrintWriter;
 import java.lang.invoke.SwitchPoint;
 import java.util.Random;
 
-public class Display extends Flight {
-	
+public class Display extends Flight 
+{
+	   private static int availabl_seat;
+	   private static int seat_number;	
+	     
+	   public Display()
+	   {
+		   availabl_seat=60;
+		   seat_number=0;
+		   
+	   }
            public static void Create_File(String Fname) 
            {
         	 
@@ -43,7 +52,8 @@ public class Display extends Flight {
         	   String destination;
         	   String type_of_Plane=" ";
         	   int Total_seat=60;
-        	   int availabl_seat=60;
+        	  // int availabl_seat=60;
+        	   // int seat_number=0;
         	     String Origin;
         		 String Destination;
         		 String flight_Date=" ";
@@ -247,7 +257,7 @@ public class Display extends Flight {
         	    Obj1 = new Scanner(System.in); 
         	    ticket_choice=Obj1.nextInt();
         	    int ticket_random=0;
-        	    int seat_number=0;
+        	  
         	    int amount=0;
         	    Random rand_num = new Random();
         	     if(ticket_choice==1)
@@ -264,9 +274,76 @@ public class Display extends Flight {
         	         System.out.println("Congratulations Your Ticket and generated successfully! ");
         	         System.out.println("Your ticket number is "+ticket_random+" ");
         	         System.out.println("Your seat number is "+seat_number+" ");
-        	        // Total_seat=60;
-              	      availabl_seat=availabl_seat -1;
-        	         
+        	        //Total_seat=60;
+              	      availabl_seat=availabl_seat - 1;
+              	    Obj1 = new Scanner(System.in); 
+        	        int ch=0;
+        	        int change_ch=0;
+        	        
+        	        int new_customer=0;
+              	    System.out.println("Dear Customer do you want to change your information! ");
+              	    System.out.println("Enter 1 for Yes and 0 for No !");
+              	    ch=Obj1.nextInt();
+              	    if(ch==1)
+              	    {
+              	    	 System.out.println("Enter 2 to change your Destination! ");
+                  	     System.out.println("Enter 3 to change your Origin(Departure)! ");	
+                  	     System.out.println("Enter 4 to cancel your ticket ! ");
+                  	     
+                  	     Obj1 = new Scanner(System.in);
+                  	     change_ch=Obj1.nextInt();
+                  	     if(change_ch==2)
+                  	     {
+                  	    	Obj1 = new Scanner(System.in); 
+                    	    System.out.println("Enter your Destination (Arrival city)name! ");
+                    	    destination=Obj1.nextLine();
+                    	    obj2.setDestination(destination);
+
+                    	    Obj1 = new Scanner(System.in); 
+                    	    obj3.setDestination(destination);
+                    	     
+                  	     }
+                  	     
+                  	     if (change_ch==3)
+                  	     {
+                  	    	System.out.println(" "); 
+                    	    System.out.println("Enter your Origin(Departure city) Name : ");
+                    	    Obj1 = new Scanner(System.in); 
+                    	    Origin=Obj1.nextLine();
+                    	    obj3.setorigin(Origin);	 
+                  	    	 
+                  	     }
+                  	     
+                  	     if(change_ch==4)
+                  	     {
+                  	    	System.out.println("You want to cancel your Ticket! ");
+                  	    	System.out.println("For New customer! ");
+                  	    	System.out.println("Do you want to Buy a ticket ?!");
+                  	    	System.out.println("Enter 1 for Yes and 0 for exit from the system !");
+                  	    	
+                  	    	 Obj1 = new Scanner(System.in);
+                  	    	 new_customer=Obj1.nextInt(); 
+                  	    	 if(new_customer==1)
+                  	    	 {
+                  	    		Input(Fname2);	 
+                  	    	 }
+                  	    	 
+                  	    	if(new_customer==0)
+                 	    	 {
+                  	    		System.out.println("You want to exit !");
+                     	    	System.out.println("so system exit! ");
+                     	    	System.exit(0);
+                     	    	
+                 	    	 }
+                  	    	 
+                  	    	 
+                  	    	
+                  	     }
+                  	     
+              	    }
+              	   
+              	    
+              	      
         	        } 
              	    
              	    else 
