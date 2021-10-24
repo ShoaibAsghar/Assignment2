@@ -35,6 +35,13 @@ public class Passenger
 		 name=nam;	 
    }
 
+   private static void composition() 
+   {
+	   Ticket ticket= new Ticket();
+	  
+	   ticket.setTicket_number(22); 
+	   System.out.println("The ticket number is "+ ticket.getTicket_number()); 
+   }
   public String getname() 
    {
 		 return name;

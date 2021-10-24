@@ -24,22 +24,10 @@ public class Flight
 	   }
 	 
 	 
-	 /*
-	  public void setAddress(Address address) 
-	  {
-		this.address = address;
-	}
-	
-	public Address getAddress() 
-	{
-		return address;
-	}
-	  */
-	 
 	 private String Origin;
 	 private String Destination;
 	 private static String[] flight_Date=new String[7];
-	 private static String[] flight_schedule=new String[10];
+	 private static String[] flight_schedule=new String[7];
 	 private int book_seat;
 	 private String CNIC,Passport;
      

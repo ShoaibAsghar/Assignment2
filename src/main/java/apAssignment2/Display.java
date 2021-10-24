@@ -53,9 +53,11 @@ public class Display extends Flight
         	   String Gender;
         	   String passport;
         	   String address;
+        	   int Age=0;
         	   String destination;
         	   String type_of_Plane=" ";
         	   int Total_seat=60;
+        	   int Dirrect_ch=0;
         	  // int availabl_seat=60;
         	   // int seat_number=0;
         	     String Origin;
@@ -91,17 +93,22 @@ public class Display extends Flight
         	     System.out.println("Enter your Name : ");
         	    Name = Obj1.nextLine(); 
         	    obj2.setname(Name);
-        	    int fare=10000;
+        	    
+        	    Obj1 = new Scanner(System.in);  		 
+       	        System.out.println("Enter your Age : ");
+       	        Age = Obj1.nextInt(); 
+        	    int fare=15000;
         	    int total_fare=0;
         	    int another_record=0;
         	    System.out.println(" ");
         	   
-        	    
+        	    Obj1 = new Scanner(System.in); 
         	    System.out.println("Enter your Gender(Male or Female) : ");
         	    
         	    Gender = Obj1.nextLine(); 
         	    obj2.setgender(Gender); 
         	    int choice2;
+        	    Obj1 = new Scanner(System.in); 
         	    System.out.println("Enter your Address : ");
         	    address = Obj1.nextLine(); 
         	    obj2.setAddress(address);
@@ -202,7 +209,7 @@ public class Display extends Flight
       	      
     	      //
 			}
-        	    String [] flight_Array=new String [10]; 
+        	    String [] flight_Array=new String [7]; 
         	    flight_Array[0]="Pk701 Islamabad to Lahore! ";
         	    flight_Array[1]="Pk702 Islamabad to Karachi! ";
         	    flight_Array[2]="Pk703 Islamabad to Multan! ";
@@ -210,20 +217,80 @@ public class Display extends Flight
         	    flight_Array[4]="Pk705 Lahore to Karachi! ";
         	    flight_Array[5]="Pk706 Lahore to Peshawar! ";
         	    flight_Array[6]="Pk707 Lahore to London! ";
-        	    flight_Array[7]="Pk708 London to Islamabad! ";
-        	    flight_Array[8]="Pk709 London to Manchester! ";
-        	    flight_Array[9]="Pk710 Lahore to Newyork! ";
+        	   
+        	    //
+        	    String [] flight_time_Array=new String [7];
+        	    flight_time_Array[0]=" 10:00AM ";
+        	    flight_time_Array[1]=" 12:00PM ";
+        	    flight_time_Array[2]=" 01:30PM ";
+        	    flight_time_Array[3]=" 02:30PM ";
+        	    flight_time_Array[4]=" 05:00PM ";
+        	    flight_time_Array[5]=" 08:30PM ";
+        	    flight_time_Array[6]=" 10:30PM ";
+        	    
+        	    //
+        	    int [] flight_Fare_Array=new int [7];
+        	    flight_Fare_Array[0]=15000;
+        	    flight_Fare_Array[1]=25000;
+        	    flight_Fare_Array[2]=30000;
+        	    flight_Fare_Array[3]=20000;	
+        	    flight_Fare_Array[4]=22000;
+        	    flight_Fare_Array[5]=35000;
+        	    flight_Fare_Array[6]=50000;
+        	    //
+        	    int [] flight_Avail_seat_Array=new int [7];
+        	    flight_Avail_seat_Array[0]=60;
+        	    flight_Avail_seat_Array[1]=60;
+        	    flight_Avail_seat_Array[2]=60;
+        	    flight_Avail_seat_Array[3]=60;	
+        	    flight_Avail_seat_Array[4]=60;
+        	    flight_Avail_seat_Array[5]=60;
+        	    flight_Avail_seat_Array[6]=60;
+        	    
+        	    //
+        	    String [] Indirectflight_Array=new String [7]; 
+        	    Indirectflight_Array[0]="Pk901 Islamabad to ->Lahore then ->Multan! ";
+        	    Indirectflight_Array[1]="Pk902 Islamabad to ->Karachi then ->Dubai! ";
+        	    Indirectflight_Array[2]="Pk903 Islamabad to ->Peshawar then -> Queta! ";
+        	    Indirectflight_Array[3]="Pk904 Lahore to ->Islamabad then ->Queta! ";
+        	    Indirectflight_Array[4]="Pk905 Lahore to ->Karachi then ->Sukkur! ";
+        	    Indirectflight_Array[5]="Pk906 Lahore to ->Islamabad then->Peshawar! ";
+        	    Indirectflight_Array[6]="Pk907 Lahore to -> Qatar then ->London! ";
         	    
         	    //
         	    setflight_schedule(flight_Array); 
         	    
         	    System.out.println("Please Enter correct Flight information! ");
-        	    
-        	    System.out.println(" These are the Available Flights! ");
-        	    for(int i=0; i<10; i++)
+        	    System.out.println("You can choose Direct or Indirect Flight as your wish! ");
+        	    System.out.println("Enter 1 for Direct Flight! ");
+        	    System.out.println("Enter 2 for Indirect flight! ");
+        	    //Dirrect_ch
+        	    Obj1 = new Scanner(System.in); 
+        	    Dirrect_ch=Obj1.nextInt();
+        	    if(Dirrect_ch==1)
         	    {
-        	    	System.out.println(flight_Array[i]);	
+        	    	System.out.println(" These are the Available Direct Flights! ");
+            	    for(int i=0; i<7; i++)
+            	    {
+            	    	System.out.println(flight_Array[i]+ " has fare "+ flight_Fare_Array[i] + " Departure time "+ flight_time_Array[i]+ " has availabe seat " + flight_Avail_seat_Array[i]);	
+            	    }	
+        	    	
+            	    
         	    }
+        	    
+        	    if(Dirrect_ch==2)
+        	    {
+        	    	System.out.println(" These are the Available Indirect Flights! ");
+            	    for(int i=0; i<7; i++)
+            	    {
+            	    	System.out.println(Indirectflight_Array[i] + " has fare "+ flight_Fare_Array[i] + " Departure time "+ flight_time_Array[i]+ " has availabe seat " + flight_Avail_seat_Array[i]);	
+            	    }	
+        	    	
+            	    
+        	    }
+        	    
+        	    
+        	    
         	    
         	    System.out.println(" "); 
         	    System.out.println("Enter your Origin(Departure city) Name : ");
@@ -256,13 +323,13 @@ public class Display extends Flight
            try 
         	  {
         	    System.out.println("Please choose correct Date From Available Date!");
-        	    System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+" : ");
-        	    System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+" : ");
-        	    System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+" : ");
-        	    System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+" : ");
-        	    System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+" : ");
-        	    System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+" : ");
-        	    System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+" : ");
+        	    System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
+        	    System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
+        	    System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
+        	    System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
+        	    System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
+        	    System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
+        	    System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
         	    Obj1 = new Scanner(System.in); 
         	    choice_date=Obj1.nextInt();
         	    
@@ -323,13 +390,13 @@ public class Display extends Flight
     	   System.out.println("Please entered correct choice!");
     	   
     	   System.out.println("Please choose correct Date From Available Date!");
-   	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+" : ");
-   	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+" : ");
-   	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+" : ");
-   	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+" : ");
-   	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+" : ");
-   	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+" : ");
-   	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+" : ");
+   	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
+   	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
+   	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
+   	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
+   	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
+   	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
+   	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
    	       Obj1 = new Scanner(System.in); 
    	       choice_date=Obj1.nextInt();
    	       while(choice_date>7 || choice_date<=0)
@@ -338,13 +405,13 @@ public class Display extends Flight
       	     System.out.println("Please entered correct choice!");
       	   
       	       System.out.println("Please choose correct Date From Available Date!");
-     	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+" : ");
-     	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+" : ");
-     	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+" : ");
-     	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+" : ");
-     	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+" : ");
-     	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+" : ");
-     	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+" : ");
+     	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
+     	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
+     	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
+     	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
+     	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
+     	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
+     	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
      	       Obj1 = new Scanner(System.in); 
      	       choice_date=Obj1.nextInt();  
    	       }
@@ -670,7 +737,7 @@ public class Display extends Flight
          		   fw = new FileWriter(Fname2, true); 
          		   bw = new BufferedWriter(fw);
          		   pw = new PrintWriter(bw); 
-         		   pw.println(Name+" "+Gender+" "+address+" "+passport+" "+ type_of_Plane +" "+destination+" "+Origin+" "+seat_number+" "+flight_Date+" "+CNIC+" "+total_fare+" "+ticket_random+" "+Total_seat+" "+availabl_seat+" "); 
+         		   pw.println(Name+" "+Age+" "+Gender+" "+address+" "+passport+" "+ type_of_Plane +" "+destination+" "+Origin+" "+seat_number+" "+flight_Date+" "+CNIC+" "+total_fare+" "+ticket_random+" "+Total_seat+" "+availabl_seat+" "); 
          		  // pw.println("Root");
          		  // pw.println("Ben");
          		   System.out.println("Data Successfully appended into file");
