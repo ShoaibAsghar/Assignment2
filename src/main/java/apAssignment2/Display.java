@@ -29,17 +29,21 @@ public class Display extends Flight
         	 
         	 try {
         	      File myObj = new File(Fname);
-        	      if (myObj.createNewFile()) {
+        	      if (myObj.createNewFile()) 
+        	      {
         	        System.out.println("File created: " + myObj.getName());
         	      } 
         	      else 
         	      {
         	        System.out.println("File already exists.");
         	      }
-        	    } catch (IOException e) {
+        	    } 
+        	    
+        	    catch (IOException e) 
+        	     {
         	      System.out.println("An error occurred.");
         	      e.printStackTrace();
-        	    }
+        	     }
         	  
            }
            
@@ -61,9 +65,14 @@ public class Display extends Flight
         		 String CNIC;
         		 String pass;
         	   
+        	   Random rand_num = new Random();	 
         	   Passenger obj2=new Passenger();
         	   Flight obj3=new Flight();
-        	 int choice;
+        	   int choice;
+        	   int ticket_random=0;  
+       	       int amount=0;
+        try 
+        	{
         	 System.out.println("Welcome To Flight Reservation system ");  
         	 System.out.println("Customer Registration: ");
         	 System.out.println("Are you want to book a flight!");
@@ -71,6 +80,10 @@ public class Display extends Flight
         	 
         	 Scanner Obj1 = new Scanner(System.in); 
         	 choice=Obj1.nextInt();
+        	 if(choice<0 || choice>1)
+        	 {
+        		 throw new Exception();
+        	 }
         	 
         	 if(choice==1)
         	 {
@@ -95,11 +108,20 @@ public class Display extends Flight
         	    System.out.println("Enter your Passport Number : ");
         	    passport = Obj1.nextLine(); 
         	    obj2.setPassport(passport);
+        	    
+        	try
+        	  {
         	    System.out.println("Enter Type of plane (Enter your choice) : ");
         	    System.out.println("Enter 1 for Business class!");
         	    System.out.println("Enter 2 for Economy class!");
         	    System.out.println("Enter 3 for First class! ");
         	    choice2=Obj1.nextInt();
+        	    
+        	    if(choice2<=0 || choice2>3)
+           	     {
+           		   throw new Exception();
+           	     }
+        	    
         	    if(choice2==1)
         	    {
         	    	type_of_Plane="Business class";  	
@@ -128,7 +150,58 @@ public class Display extends Flight
         	    {
         	    	System.out.println("You entered wrong choice");
         	    }
-        	    
+        	 } 
+        	
+      catch (Exception e) 
+        	{
+    	      System.out.println("You entered wrong choice!");
+    	      System.out.println("Please entered correct choice");
+    	      
+    	      System.out.println("Enter Type of plane (Enter your choice) : ");
+      	      System.out.println("Enter 1 for Business class!");
+      	      System.out.println("Enter 2 for Economy class!");
+      	      System.out.println("Enter 3 for First class! ");
+      	      Obj1 = new Scanner(System.in);  
+      	      choice2=Obj1.nextInt();
+      	      while(choice2<=0  || choice2>3)
+      	      {
+      	    	 System.out.println("You entered wrong choice!");
+       	         System.out.println("Please entered correct choice");
+       	      
+       	          System.out.println("Enter Type of plane (Enter your choice) : ");
+         	      System.out.println("Enter 1 for Business class!");
+         	      System.out.println("Enter 2 for Economy class!");
+         	      System.out.println("Enter 3 for First class! ");
+         	      Obj1 = new Scanner(System.in);  
+         	      choice2=Obj1.nextInt();	  
+      	      }
+      	      //
+      	        if(choice2==1)
+    	          {
+    	    	   type_of_Plane="Business class";  	
+    	    	   obj2.setType_of_Plane(type_of_Plane);
+    	    	   total_fare=fare+3000;
+    	    	
+    	         }
+    	    
+    	       if(choice2==2)
+    	         {
+    	    	  type_of_Plane="Economy class";  	
+    	    	  obj2.setType_of_Plane(type_of_Plane);
+    	    	  total_fare=fare;
+    	    	
+    	        }
+    	    
+    	      if(choice2==3)
+    	        {
+    	    	  type_of_Plane="First Class";  	
+    	    	  obj2.setType_of_Plane(type_of_Plane);
+    	    	  total_fare=fare+2000;
+    	    	
+    	        }
+      	      
+    	      //
+			}
         	    String [] flight_Array=new String [10]; 
         	    flight_Array[0]="Pk701 Islamabad to Lahore! ";
         	    flight_Array[1]="Pk702 Islamabad to Karachi! ";
@@ -179,7 +252,9 @@ public class Display extends Flight
         	    flight_Date_Array[6]="30/10/2021";
         	    
         	    setflight_Date(flight_Date_Array); 
-        	    
+        	   
+           try 
+        	  {
         	    System.out.println("Please choose correct Date From Available Date!");
         	    System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+" : ");
         	    System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+" : ");
@@ -190,6 +265,11 @@ public class Display extends Flight
         	    System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+" : ");
         	    Obj1 = new Scanner(System.in); 
         	    choice_date=Obj1.nextInt();
+        	    
+        	    if(choice_date<=0 || choice_date>7)
+          	     {
+          		   throw new Exception();
+          	     }
         	    
         	    switch (choice_date) 
         	    {
@@ -235,7 +315,87 @@ public class Display extends Flight
         	      break;
         	  }
         	    
-        	    
+       }	
+           //above is the try block end
+       catch (Exception e) 
+           {
+    	   System.out.println("You entered wrong choice !");
+    	   System.out.println("Please entered correct choice!");
+    	   
+    	   System.out.println("Please choose correct Date From Available Date!");
+   	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+" : ");
+   	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+" : ");
+   	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+" : ");
+   	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+" : ");
+   	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+" : ");
+   	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+" : ");
+   	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+" : ");
+   	       Obj1 = new Scanner(System.in); 
+   	       choice_date=Obj1.nextInt();
+   	       while(choice_date>7 || choice_date<=0)
+   	       {
+   	    	 System.out.println("You entered wrong choice !");
+      	     System.out.println("Please entered correct choice!");
+      	   
+      	       System.out.println("Please choose correct Date From Available Date!");
+     	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+" : ");
+     	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+" : ");
+     	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+" : ");
+     	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+" : ");
+     	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+" : ");
+     	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+" : ");
+     	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+" : ");
+     	       Obj1 = new Scanner(System.in); 
+     	       choice_date=Obj1.nextInt();  
+   	       }
+    	   //
+   	        switch (choice_date) 
+	        {
+	    
+	        case 1:
+	    	flight_Date=flight_Date_Array[0];
+    	   //obj3.setflight_Date(flight_Date);
+	         break;
+	      
+	        case 2:
+	    	flight_Date=flight_Date_Array[1];
+    	   //obj3.setflight_Date(flight_Date);	
+	         break;
+	      
+	        case 3:
+	    	flight_Date=flight_Date_Array[2];
+    	   //obj3.setflight_Date(flight_Date); 	
+	       
+	         break;
+	      
+	        case 4:
+	    	flight_Date=flight_Date_Array[3];
+    	  //obj3.setflight_Date(flight_Date);	
+	       
+	         break;
+	      
+	        case 5:
+	    	flight_Date=flight_Date_Array[4];
+    	   //obj3.setflight_Date(flight_Date);	
+	      
+	        break;
+	      
+	      case 6:
+	    
+	      flight_Date=flight_Date_Array[5];
+  	    //obj3.setflight_Date(flight_Date);
+	        break;
+	      
+	      case 7:
+	    
+	      flight_Date=flight_Date_Array[6];
+  	    //obj3.setflight_Date(flight_Date);
+	        break;
+	  }
+   	       
+   	       //
+	       }
+           //above is catch block end
         	    book_seat=1;
         	    obj3.setbook_seat(book_seat);
         	    
@@ -252,14 +412,22 @@ public class Display extends Flight
         	    System.out.println("Dear customer you want to book "+type_of_Plane+" ");
         	    System.out.println("Your Fare is "+ total_fare);
         	    System.out.println("Do you want to buy this ticket? ");
+        	 try   
+        	 {
         	    System.out.println("Enter 1 to buy this ticket! ");
         	    System.out.println("Enter 2 to cancel this ticket! ");
         	    Obj1 = new Scanner(System.in); 
         	    ticket_choice=Obj1.nextInt();
-        	    int ticket_random=0;
+        	    
+        	    if(ticket_choice<=0 || ticket_choice>2)
+         	     {
+         		   throw new Exception();
+         	     }
+        	    
+        	   // int ticket_random=0;
         	  
-        	    int amount=0;
-        	    Random rand_num = new Random();
+        	  // int amount=0;
+        	    //Random rand_num = new Random();
         	     if(ticket_choice==1)
         	     {
         	    	 System.out.println("Enter Your Flight Fare -> "+ total_fare+" Thorugh your consol! ");
@@ -276,6 +444,7 @@ public class Display extends Flight
         	         System.out.println("Your seat number is "+seat_number+" ");
         	        //Total_seat=60;
               	      availabl_seat=availabl_seat - 1;
+              	      //now
               	    Obj1 = new Scanner(System.in); 
         	        int ch=0;
         	        int change_ch=0;
@@ -285,13 +454,22 @@ public class Display extends Flight
               	    System.out.println("Enter 1 for Yes and 0 for No !");
               	    ch=Obj1.nextInt();
               	    if(ch==1)
-              	    {
+              	    {    
+              	    //below is try block 
+              	    	try 
+              	    	{
               	    	 System.out.println("Enter 2 to change your Destination! ");
                   	     System.out.println("Enter 3 to change your Origin(Departure)! ");	
                   	     System.out.println("Enter 4 to cancel your ticket ! ");
                   	     
                   	     Obj1 = new Scanner(System.in);
                   	     change_ch=Obj1.nextInt();
+                  	     
+                  	   if(change_ch<=1 || change_ch>4)
+               	         {
+               		       throw new Exception();
+               	         }
+                  	   
                   	     if(change_ch==2)
                   	     {
                   	    	Obj1 = new Scanner(System.in); 
@@ -339,7 +517,87 @@ public class Display extends Flight
                   	    	 
                   	    	
                   	     }
-                  	     
+                  	     //case 4 end here
+              	}	
+              	    	//above is try block end
+             catch (Exception e) 
+              	    	//START catch
+              	    	{
+            	           System.out.println("You enter wrong choice!");	
+                           System.out.println("please enter correct choice");
+                           System.out.println("Enter 2 to change your Destination! ");
+                    	   System.out.println("Enter 3 to change your Origin(Departure)! ");	
+                    	   System.out.println("Enter 4 to cancel your ticket ! ");
+                    	     
+                    	   Obj1 = new Scanner(System.in);
+                    	   change_ch=Obj1.nextInt();
+                    	   while(change_ch>4 || change_ch<=1)
+                    	   {
+                    		   System.out.println("You enter wrong choice!");	
+                               System.out.println("please enter correct choice");
+                               System.out.println("Enter 2 to change your Destination! ");
+                        	   System.out.println("Enter 3 to change your Origin(Departure)! ");	
+                        	   System.out.println("Enter 4 to cancel your ticket ! ");
+                        	     
+                        	   Obj1 = new Scanner(System.in);
+                        	   change_ch=Obj1.nextInt();  
+                    		   
+                    	   }
+                    	     //while end here
+                    	   
+                    	     if(change_ch==2)
+                    	     {
+                    	    	Obj1 = new Scanner(System.in); 
+                      	    System.out.println("Enter your Destination (Arrival city)name! ");
+                      	    destination=Obj1.nextLine();
+                      	    obj2.setDestination(destination);
+
+                      	    Obj1 = new Scanner(System.in); 
+                      	    obj3.setDestination(destination);
+                      	     
+                    	     }
+                    	     
+                    	     if (change_ch==3)
+                    	     {
+                    	    	System.out.println(" "); 
+                      	    System.out.println("Enter your Origin(Departure city) Name : ");
+                      	    Obj1 = new Scanner(System.in); 
+                      	    Origin=Obj1.nextLine();
+                      	    obj3.setorigin(Origin);	 
+                    	    	 
+                    	     }
+                    	     
+                    	     if(change_ch==4)
+                    	     {
+                    	    	System.out.println("You want to cancel your Ticket! ");
+                    	    	System.out.println("For New customer! ");
+                    	    	System.out.println("Do you want to Buy a ticket ?!");
+                    	    	System.out.println("Enter 1 for Yes and 0 for exit from the system !");
+                    	    	
+                    	    	 Obj1 = new Scanner(System.in);
+                    	    	 new_customer=Obj1.nextInt(); 
+                    	    	 if(new_customer==1)
+                    	    	 {
+                    	    		Input(Fname2);	 
+                    	    	 }
+                    	    	 
+                    	    if(new_customer==0)
+                   	    	 {
+                    	    		System.out.println("You want to exit !");
+                       	    	System.out.println("so system exit! ");
+                       	    	System.exit(0);
+                       	    	
+                   	    	 }
+                    	    	 
+                    	    	 
+                    	    	
+                    	     }
+                    	     //case 4 end here
+                    	   
+            	        //case 4 end here
+						}
+              	    	
+              	    	//catch block end
               	    }
               	   
               	    
@@ -361,8 +619,49 @@ public class Display extends Flight
         	    	 System.out.println("System exit!");
         	    	 System.exit(0);
         	     }
-        	     
-        	    //
+        }
+        	 //above is end of try block
+        catch (Exception e) 
+        {
+          System.out.println("You enter wrong choice!");	
+          System.out.println("please enter correct choice");
+          System.out.println("Enter 1 to buy this ticket! ");
+  	      System.out.println("Enter 2 to cancel this ticket! ");
+  	      Obj1 = new Scanner(System.in); 
+  	      ticket_choice=Obj1.nextInt();
+          while(ticket_choice>2 || ticket_choice<=0)
+          {
+        	  System.out.println("You enter wrong choice!");	
+              System.out.println("please enter correct choice");
+              System.out.println("Enter 1 to buy this ticket! ");
+      	      System.out.println("Enter 2 to cancel this ticket! ");
+      	      Obj1 = new Scanner(System.in); 
+      	      ticket_choice=Obj1.nextInt();  
+          }
+            //above is end of while block
+          if(ticket_choice==1)
+ 	     {
+ 	    	 System.out.println("Enter Your Flight Fare -> "+ total_fare+" Thorugh your consol! ");
+ 	    	 Obj1 = new Scanner(System.in); 
+      	    amount=Obj1.nextInt();
+      	    if (amount==total_fare)
+      	    {
+      	    	
+ 	         // Generate random integers 
+ 	         ticket_random = rand_num.nextInt(10000);
+ 	         seat_number=seat_number+1;
+ 	         System.out.println("Congratulations Your Ticket and generated successfully! ");
+ 	         System.out.println("Your ticket number is "+ticket_random+" ");
+ 	         System.out.println("Your seat number is "+seat_number+" ");
+ 	        //Total_seat=60;
+       	      availabl_seat=availabl_seat - 1;
+      	    }
+ 	     }  
+       	      //now
+            //now this one 
+          
+		}	 
+        	    //above is end of catch block now from this we start work
         	    FileWriter fw = null; 
          	   BufferedWriter bw = null;
          	   PrintWriter pw = null;
@@ -402,18 +701,65 @@ public class Display extends Flight
          	   }
          	   
          	   
-        	    
+        	 try 
+        	    {   
          	  System.out.println("Do you want to book another seat! ");
          	  System.out.println("Enter 1 to book for another seat! ");
-         	 System.out.println("Enter 2 to Quit this program! ");
+         	  System.out.println("Enter 2 to Quit this program! ");
          	 
          	 Obj1 = new Scanner(System.in); 
          	 another_record=Obj1.nextInt();
+         	 
+         	 if(another_record<=0 || another_record>2)
+   	         {
+   		       throw new Exception();
+   	         }
          	 
          	 if (another_record==1)
          	 {
          		Input(Fname2);
          	 }
+         	 
+         	if (another_record==2)
+        	 {
+         		System.out.println("You do not want to book a flight so system quit!");
+         		System.exit(0);
+        	 }
+        	   }	 
+        	 
+        	 catch (Exception e) 
+        	 {
+        		 System.out.println("You entered wrong choice! ");
+   		         System.out.println("Please enter correct choice!");
+   		         System.out.println("Do you want to book another seat! ");
+         	     System.out.println("Enter 1 to book for another seat! ");
+         	     System.out.println("Enter 2 to Quit this program! ");
+         	 
+         	    Obj1 = new Scanner(System.in); 
+         	    another_record=Obj1.nextInt();
+				while(another_record<=0 || another_record>2)
+				{
+					 System.out.println("You entered wrong choice! ");
+	   		         System.out.println("Please enter correct choice!");
+	   		         System.out.println("Do you want to book another seat! ");
+	         	     System.out.println("Enter 1 to book for another seat! ");
+	         	     System.out.println("Enter 2 to Quit this program! ");	
+				}
+         	     //above is end block of while
+				
+				if (another_record==1)
+	         	 {
+	         		Input(Fname2);
+	         	 }
+	         	 
+	         	if (another_record==2)
+	        	 {
+	         		System.out.println("You do not want to book a flight so system quit!");
+	         		System.exit(0);
+	        	 }
+				
+			 }
+         	 //above is end of catch block
          	 
            }
         	 
@@ -421,14 +767,20 @@ public class Display extends Flight
         	 {
         		 System.out.println("You do not want to book a flight so system quit!");	 
         	 }
-        	 
-        	 
+       }    	 
+         //above is for try block 	 
+        
+       catch (Exception a) 
+ 	         {
+ 		       System.out.println("You entered wrong choice! ");
+ 		       System.out.println("Please enter correct choice!");
+ 		       Input( Fname2);
+ 		      
+ 		      }
+        	  
         }  
            
-          
-           
-           
-           
+        
            public static void Read_File(String Fname3)
            {
         	   try {
@@ -436,8 +788,8 @@ public class Display extends Flight
         		      Scanner myReader = new Scanner(myObj);
         		      while (myReader.hasNextLine()) 
         		      {
-        		        String data = myReader.nextLine();
-        		        System.out.println(data);
+        		        String Line_data = myReader.nextLine();
+        		        System.out.println(Line_data);
         		      }
         		      
         		      myReader.close();
