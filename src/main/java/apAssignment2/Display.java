@@ -786,7 +786,11 @@ public class Display extends Flight
             //above is end of while block
           if(ticket_choice==1)
  	     {
- 	    	 System.out.println("Enter Your Flight Fare -> "+ total_fare+" Thorugh your consol! ");
+        	 System.out.println("|------------------------------------------------------------------|"); 
+ 	    	 System.out.println("|--Enter Your Flight Fare -> "+ total_fare+" Thorugh your consol! -|");
+ 	    	 System.out.println("|------------------------------------------------------------------|"); 
+ 	    	 
+ 	    	 
  	    	 Obj1 = new Scanner(System.in); 
       	    amount=Obj1.nextInt();
       	    if (amount==total_fare)
@@ -795,10 +799,13 @@ public class Display extends Flight
  	         // Generate random integers 
  	         ticket_random = rand_num.nextInt(10000);
  	         seat_number=seat_number+1;
- 	         System.out.println("Congratulations Your Ticket and generated successfully! ");
- 	         System.out.println("Your ticket number is "+ticket_random+" ");
- 	         System.out.println("Your seat number is "+seat_number+" ");
- 	        //Total_seat=60;
+ 	        System.out.println("|------------------------------------------------------------------|"); 
+	         System.out.println("|-----Congratulations Your Ticket and generated successfully! -----|");
+	         System.out.println("|------------------------------------------------------------------|"); 
+	         System.out.println("|-----  Your ticket number is "+ticket_random+"--------------------|");
+	         System.out.println("|-------Your seat number is "+seat_number+"------------------------|");
+	         System.out.println("|------------------------------------------------------------------|"); 
+	         
        	      availabl_seat=availabl_seat - 1;
       	    }
  	     }  
@@ -817,7 +824,9 @@ public class Display extends Flight
          		   pw = new PrintWriter(bw); 
          		   pw.println(Name+" "+Age+" "+Gender+" "+address+" "+passport+" "+ type_of_Plane +" "+destination+" "+Origin+" "+seat_number+" "+flight_Date+" "+CNIC+" "+total_fare+" "+ticket_random+" "+Total_seat+" "+availabl_seat+" "); 
          		   
-         		   System.out.println("Data Successfully save into file");
+         		   System.out.println("|------------------------------------------------------------------|"); 
+         		   System.out.println("|-------------Data Successfully saved into file!-------------------|");
+         		   System.out.println("|------------------------------------------------------------------|"); 
          		   pw.flush(); 
          		   
          	   }
@@ -848,9 +857,11 @@ public class Display extends Flight
          	   
         	 try 
         	    {   
-         	  System.out.println("Do you want to book another seat! ");
-         	  System.out.println("Enter 1 to book for another seat! ");
-         	  System.out.println("Enter 2 to Quit this program! ");
+        	  System.out.println("|------------------------------------------------------------------|"); 	 
+         	  System.out.println("|------------Do you want to book another seat! --------------------|");
+         	  System.out.println("|------------Enter 1 to book for another seat! --------------------|");
+         	  System.out.println("|------------Enter 2 to Quit this program! ------------------------|");
+         	  System.out.println("|------------------------------------------------------------------|"); 
          	 
          	 Obj1 = new Scanner(System.in); 
          	 another_record=Obj1.nextInt();
@@ -867,28 +878,38 @@ public class Display extends Flight
          	 
          	if (another_record==2)
         	 {
-         		System.out.println("You do not want to book a flight so system quit!");
+         		System.out.println("|------------------------------------------------------------------|"); 
+         		System.out.println("|-------You do not want to book a flight so system quit!-----------|");
+         		System.out.println("|------------------------------------------------------------------|"); 
          		//System.exit(0);
         	 }
         	   }	 
         	 
         	 catch (Exception e) 
         	 {
-        		 System.out.println("You entered wrong choice! ");
-   		         System.out.println("Please enter correct choice!");
-   		         System.out.println("Do you want to book another seat! ");
-         	     System.out.println("Enter 1 to book for another seat! ");
-         	     System.out.println("Enter 2 to Quit this program! ");
+        		 System.out.println("|------------------------------------------------------------------|"); 
+        		 System.out.println("|---------------You entered wrong choice! -------------------------|");
+   		         System.out.println("|---------------Please enter correct choice!-----------------------|");
+   		         System.out.println("|------------Do you want to book another seat! --------------------|");
+         	     System.out.println("|------------Enter 1 to book for another seat! --------------------|");
+         	     System.out.println("|------------Enter 2 to Quit this program! ------------------------|");
+         	     System.out.println("|------------------------------------------------------------------|"); 
+         	     
+   		         
          	 
          	    Obj1 = new Scanner(System.in); 
          	    another_record=Obj1.nextInt();
 				while(another_record<=0 || another_record>2)
 				{
-					 System.out.println("You entered wrong choice! ");
-	   		         System.out.println("Please enter correct choice!");
-	   		         System.out.println("Do you want to book another seat! ");
-	         	     System.out.println("Enter 1 to book for another seat! ");
-	         	     System.out.println("Enter 2 to Quit this program! ");	
+					 System.out.println("|------------------------------------------------------------------|"); 
+	        		 System.out.println("|---------------You entered wrong choice! -------------------------|");
+	   		         System.out.println("|---------------Please enter correct choice!-----------------------|");
+	   		         System.out.println("|------------Do you want to book another seat! --------------------|");
+	         	     System.out.println("|------------Enter 1 to book for another seat! --------------------|");
+	         	     System.out.println("|------------Enter 2 to Quit this program! ------------------------|");
+	         	     System.out.println("|------------------------------------------------------------------|"); 
+	         	     
+					 
 	         	     Obj1 = new Scanner(System.in); 
 	         	     another_record=Obj1.nextInt();
 				}
@@ -901,7 +922,11 @@ public class Display extends Flight
 	         	 
 	         	if (another_record==2)
 	        	 {
-	         		System.out.println("You do not want to book a flight so system quit!");
+	         		System.out.println("|------------------------------------------------------------------|"); 
+	         		System.out.println("|-------You do not want to book a flight so system quit!-----------|");
+	         		System.out.println("|------------------------------------------------------------------|"); 
+	         		
+	         		
 	         		//System.exit(0);
 	        	 }
 				
@@ -912,7 +937,10 @@ public class Display extends Flight
         	 
         	 else
         	 {
-        		 System.out.println("You do not want to book a flight so system quit!");	
+        		 	
+        		 System.out.println("|------------------------------------------------------------------|"); 
+          		 System.out.println("|-------You do not want to book a flight so system quit!-----------|");
+          		 System.out.println("|------------------------------------------------------------------|"); 
         		// System.exit(0);
         	 }
        }    	 
@@ -920,8 +948,10 @@ public class Display extends Flight
         
        catch (Exception a) 
  	         {
- 		       System.out.println("You entered wrong choice! ");
- 		       System.out.println("Please enter correct choice!");
+    	         System.out.println("|------------------------------------------------------------------|"); 
+  		         System.out.println("|---------------You entered wrong choice! -------------------------|");
+		         System.out.println("|---------------Please enter correct choice!-----------------------|");
+		      
  		       Input( Fname2);
  		      
  		      }
