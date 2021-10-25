@@ -58,8 +58,7 @@ public class Display extends Flight
         	   String type_of_Plane=" ";
         	   int Total_seat=60;
         	   int Dirrect_ch=0;
-        	  // int availabl_seat=60;
-        	   // int seat_number=0;
+        	 
         	     String Origin;
         		 String Destination;
         		 String flight_Date=" ";
@@ -428,7 +427,7 @@ public class Display extends Flight
      	       Obj1 = new Scanner(System.in); 
      	       choice_date=Obj1.nextInt();  
    	       }
-    	   //
+    	   
    	        switch (choice_date) 
 	        {
 	    
@@ -473,7 +472,7 @@ public class Display extends Flight
 	        break;
 	  }
    	       
-   	       //
+   	       
 	       }
            //above is catch block end
         	    book_seat=1;
@@ -504,10 +503,7 @@ public class Display extends Flight
          		   throw new Exception();
          	     }
         	    
-        	   // int ticket_random=0;
         	  
-        	  // int amount=0;
-        	    //Random rand_num = new Random();
         	     if(ticket_choice==1)
         	     {
         	    	 System.out.println("Enter Your Flight Fare -> "+ total_fare+" Thorugh your consol! ");
@@ -522,9 +518,9 @@ public class Display extends Flight
         	         System.out.println("Congratulations Your Ticket and generated successfully! ");
         	         System.out.println("Your ticket number is "+ticket_random+" ");
         	         System.out.println("Your seat number is "+seat_number+" ");
-        	        //Total_seat=60;
+        	       
               	      availabl_seat=availabl_seat - 1;
-              	      //now
+              	      
               	    Obj1 = new Scanner(System.in); 
         	        int ch=0;
         	        int change_ch=0;
@@ -664,8 +660,8 @@ public class Display extends Flight
                     	    if(new_customer==0)
                    	    	 {
                     	    		System.out.println("You want to exit !");
-                       	    	System.out.println("so system exit! ");
-                       	    	System.exit(0);
+                       	    	    System.out.println("so system exit! ");
+                       	    	    System.exit(0);
                        	    	
                    	    	 }
                     	    	 
@@ -688,7 +684,7 @@ public class Display extends Flight
              	    {
              	    	System.out.println("You enter wrong amount!");
              	    	System.out.println("so system exit! ");
-             	    	System.exit(0);
+             	    	//System.exit(0);
              	    }
              	    
         	     }
@@ -737,23 +733,22 @@ public class Display extends Flight
        	      availabl_seat=availabl_seat - 1;
       	    }
  	     }  
-       	      //now
-            //now this one 
+       	     
           
 		}	 
-        	    //above is end of catch block now from this we start work
-        	    FileWriter fw = null; 
-         	   BufferedWriter bw = null;
-         	   PrintWriter pw = null;
+        	    //above is end of catch block
+        	   BufferedWriter bw = null;
+       	       PrintWriter pw = null;
+        	   FileWriter fw = null; 
+         	   
                 
          	   try { 
          		   fw = new FileWriter(Fname2, true); 
          		   bw = new BufferedWriter(fw);
          		   pw = new PrintWriter(bw); 
          		   pw.println(Name+" "+Age+" "+Gender+" "+address+" "+passport+" "+ type_of_Plane +" "+destination+" "+Origin+" "+seat_number+" "+flight_Date+" "+CNIC+" "+total_fare+" "+ticket_random+" "+Total_seat+" "+availabl_seat+" "); 
-         		  // pw.println("Root");
-         		  // pw.println("Ben");
-         		   System.out.println("Data Successfully appended into file");
+         		   
+         		   System.out.println("Data Successfully save into file");
          		   pw.flush(); 
          		   
          	   }
@@ -767,9 +762,10 @@ public class Display extends Flight
          	   {
          		   try 
          		   {
-         			   pw.close();
          			   bw.close();
-         			   fw.close(); 
+        			   fw.close(); 
+         			   pw.close();
+         			   
          			   }
          		   
          		   catch (IOException io) 
@@ -803,7 +799,7 @@ public class Display extends Flight
          	if (another_record==2)
         	 {
          		System.out.println("You do not want to book a flight so system quit!");
-         		System.exit(0);
+         		//System.exit(0);
         	 }
         	   }	 
         	 
@@ -824,6 +820,8 @@ public class Display extends Flight
 	   		         System.out.println("Do you want to book another seat! ");
 	         	     System.out.println("Enter 1 to book for another seat! ");
 	         	     System.out.println("Enter 2 to Quit this program! ");	
+	         	     Obj1 = new Scanner(System.in); 
+	         	     another_record=Obj1.nextInt();
 				}
          	     //above is end block of while
 				
@@ -835,7 +833,7 @@ public class Display extends Flight
 	         	if (another_record==2)
 	        	 {
 	         		System.out.println("You do not want to book a flight so system quit!");
-	         		System.exit(0);
+	         		//System.exit(0);
 	        	 }
 				
 			 }
@@ -845,7 +843,8 @@ public class Display extends Flight
         	 
         	 else
         	 {
-        		 System.out.println("You do not want to book a flight so system quit!");	 
+        		 System.out.println("You do not want to book a flight so system quit!");	
+        		// System.exit(0);
         	 }
        }    	 
          //above is for try block 	 
@@ -865,27 +864,27 @@ public class Display extends Flight
            {
         	   try {
         		      File myObj = new File(Fname3);
-        		      Scanner myReader = new Scanner(myObj);
-        		      while (myReader.hasNextLine()) 
+        		      Scanner obj_reader = new Scanner(myObj);
+        		      while (obj_reader.hasNextLine()) 
         		      {
-        		        String Line_data = myReader.nextLine();
+        		        String Line_data = obj_reader.nextLine();
         		        System.out.println(Line_data);
         		      }
         		      
-        		      myReader.close();
+        		      obj_reader.close(); 
         		    } 
         	   
         	         catch (FileNotFoundException e) 
         	         {
-        		      System.out.println("An error occurred.");
+        		      System.out.println("Error occur while creating file!");
         		      e.printStackTrace();
         		    }
            }
            
            
            
+           
+           
         	   
            }
            
-           
-        

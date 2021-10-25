@@ -8,13 +8,10 @@ public class Main {
         Display obj=new Display();
         String fname1="Inputfile.txt";
         obj.Create_File(fname1);
-                                   //obj.Read_File();
-       obj.Input(fname1);
-                                  //obj.Write_File();
+                                   
+        obj.Input(fname1);
+                                  
         obj.Read_File(fname1);
-        
-        //String fname2="flightSchedule.txt";
-        //obj.Create_File(fname2);
         
         
 	}
