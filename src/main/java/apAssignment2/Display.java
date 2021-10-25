@@ -75,10 +75,17 @@ public class Display extends Flight
        	       int amount=0;
         try 
         	{
-        	 System.out.println("Welcome To Flight Reservation system ");  
-        	 System.out.println("Customer Registration: ");
-        	 System.out.println("Are you want to book a flight!");
-        	 System.out.println("Enter 1 for yes and 0 for No!");
+        	 System.out.println("--------------------------------------------------");
+        	 System.out.println("|                                                |");
+        	 System.out.println("|       Welcome To Flight Reservation system     |");  
+        	 System.out.println("|                                                |");
+        	 System.out.println("|         Customer Registration:                 |");
+        	 System.out.println("|                                                |");
+        	 System.out.println("|        Are you want to book a flight!          |");
+        	 System.out.println("|                                                |");
+        	 System.out.println("|       Enter 1 for yes and 0 for No!            |");
+        	 System.out.println("|                                                |");
+        	 System.out.println("|------------------------------------------------|");
         	 
         	 Scanner Obj1 = new Scanner(System.in); 
         	 choice=Obj1.nextInt();
@@ -118,10 +125,16 @@ public class Display extends Flight
         	    
         	try
         	  {
-        	    System.out.println("Enter Type of plane (Enter your choice) : ");
-        	    System.out.println("Enter 1 for Business class!");
-        	    System.out.println("Enter 2 for Economy class!");
-        	    System.out.println("Enter 3 for First class! ");
+        		System.out.println("|-------------------------------------------------|");
+        		System.out.println("|                                                 |");
+        	    System.out.println("|    Enter Type of plane (Enter your choice) :    |");
+        	    System.out.println("|                                                 |");
+        	    System.out.println("|            Enter 1 for Business class!          |");
+        	    System.out.println("|                                                 |");
+        	    System.out.println("|            Enter 2 for Economy class!           |");
+        	    System.out.println("|                                                 |");
+        	    System.out.println("|            Enter 3 for First class!             |");
+        	    System.out.println("|-------------------------------------------------|");
         	    choice2=Obj1.nextInt();
         	    
         	    if(choice2<=0 || choice2>3)
