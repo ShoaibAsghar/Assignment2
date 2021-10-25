@@ -173,25 +173,30 @@ public class Display extends Flight
         	
       catch (Exception e) 
         	{
-    	      System.out.println("You entered wrong choice!");
-    	      System.out.println("Please entered correct choice");
     	      
-    	      System.out.println("Enter Type of plane (Enter your choice) : ");
-      	      System.out.println("Enter 1 for Business class!");
-      	      System.out.println("Enter 2 for Economy class!");
-      	      System.out.println("Enter 3 for First class! ");
+    	      System.out.println("|-------------------------------------------------|");
+    	      System.out.println("|-------------You entered wrong choice!-----------|");
+    	      System.out.println("|------------Please entered correct choice--------|");
+    	      System.out.println("|-------------------------------------------------|");
+    	      System.out.println("|-------Enter Type of plane (Enter your choice) : |");
+      	      System.out.println("|-------Enter 1 for Business class!---------------|");
+      	      System.out.println("|-------Enter 2 for Economy class!----------------|");
+      	      System.out.println("|-------Enter 3 for First class! -----------------|");
+      	      System.out.println("|-------------------------------------------------|"); 
       	      Obj1 = new Scanner(System.in);  
       	      choice2=Obj1.nextInt();
       	      while(choice2<=0  || choice2>3)
       	      {
-      	    	 System.out.println("You entered wrong choice!");
-       	         System.out.println("Please entered correct choice");
-       	      
-       	          System.out.println("Enter Type of plane (Enter your choice) : ");
-         	      System.out.println("Enter 1 for Business class!");
-         	      System.out.println("Enter 2 for Economy class!");
-         	      System.out.println("Enter 3 for First class! ");
-         	      Obj1 = new Scanner(System.in);  
+      	    	 System.out.println("|-------------------------------------------------|");
+       	         System.out.println("|-------------You entered wrong choice!-----------|");
+       	         System.out.println("|------------Please entered correct choice--------|");
+       	         System.out.println("|-------------------------------------------------|");
+       	         System.out.println("|-------Enter Type of plane (Enter your choice) : |");
+         	     System.out.println("|-------Enter 1 for Business class!---------------|");
+         	     System.out.println("|-------Enter 2 for Economy class!----------------|");
+         	     System.out.println("|-------Enter 3 for First class! -----------------|");
+         	     System.out.println("|-------------------------------------------------|"); 
+         	      Obj1 = new Scanner(System.in);   
          	      choice2=Obj1.nextInt();	  
       	      }
       	      //
@@ -334,14 +339,17 @@ public class Display extends Flight
         	   
            try 
         	  {
-        	    System.out.println("Please choose correct Date From Available Date!");
-        	    System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
-        	    System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
-        	    System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
-        	    System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
-        	    System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
-        	    System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
-        	    System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
+        	    System.out.println("|-------------------------------------------------------------------------------|");
+        	    System.out.println("|-----Please choose correct Date From Available Date!---------------------------|");
+        	    System.out.println("| Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
+        	    System.out.println("| Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
+        	    System.out.println("| Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
+        	    System.out.println("| Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
+        	    System.out.println("| Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
+        	    System.out.println("| Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
+        	    System.out.println("| Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
+        	    System.out.println("|--------------------------------------------------------------------------------|");
+        	    System.out.println("|--------------------------------------------------------------------------------|");
         	    Obj1 = new Scanner(System.in); 
         	    choice_date=Obj1.nextInt();
         	    
@@ -398,32 +406,45 @@ public class Display extends Flight
            //above is the try block end
        catch (Exception e) 
            {
-    	   System.out.println("You entered wrong choice !");
-    	   System.out.println("Please entered correct choice!");
+    	   System.out.println("|--------------------------------------------------------------------------------------|");
+    	   System.out.println("|-----------------------------You entered wrong choice !-------------------------------|");
+    	   System.out.println("|-----------------------------Please entered correct choice!---------------------------|");
+    	   System.out.println("|--------------------------------------------------------------------------------------|");
+    	   System.out.println("|-------------------------------------------------------------------------------|");
+   	       System.out.println("|-----Please choose correct Date From Available Date!---------------------------|");
+   	       System.out.println("| Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
+   	       System.out.println("| Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
+   	       System.out.println("| Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
+   	       System.out.println("| Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
+   	       System.out.println("| Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
+   	       System.out.println("| Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
+   	       System.out.println("| Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
+   	       System.out.println("|--------------------------------------------------------------------------------|");
+   	       System.out.println("|--------------------------------------------------------------------------------|");
     	   
-    	   System.out.println("Please choose correct Date From Available Date!");
-   	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
-   	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
-   	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
-   	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
-   	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
-   	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
-   	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
+    	   
    	       Obj1 = new Scanner(System.in); 
    	       choice_date=Obj1.nextInt();
    	       while(choice_date>7 || choice_date<=0)
    	       {
-   	    	 System.out.println("You entered wrong choice !");
-      	     System.out.println("Please entered correct choice!");
-      	   
-      	       System.out.println("Please choose correct Date From Available Date!");
-     	       System.out.println("Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
-     	       System.out.println("Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
-     	       System.out.println("Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
-     	       System.out.println("Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
-     	       System.out.println("Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
-     	       System.out.println("Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
-     	       System.out.println("Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
+   	    	 
+   	    	   System.out.println("|--------------------------------------------------------------------------------------|");
+      	       System.out.println("|-----------------------------You entered wrong choice !-------------------------------|");
+      	       System.out.println("|-----------------------------Please entered correct choice!---------------------------|");
+      	       System.out.println("|--------------------------------------------------------------------------------------|");
+      	       System.out.println("|-------------------------------------------------------------------------------|");
+     	       System.out.println("|-----Please choose correct Date From Available Date!---------------------------|");
+     	       System.out.println("| Enter 1 to choose this-> Date "+flight_Date_Array[0]+ " has departure time " + flight_time_Array[0]);
+     	       System.out.println("| Enter 2 to choose this-> Date "+flight_Date_Array[1]+ " has departure time " + flight_time_Array[1]);
+     	       System.out.println("| Enter 3 to choose this-> Date "+flight_Date_Array[2]+ " has departure time " + flight_time_Array[2]);
+     	       System.out.println("| Enter 4 to choose this-> Date "+flight_Date_Array[3]+ " has departure time " + flight_time_Array[3]);
+     	       System.out.println("| Enter 5 to choose this-> Date "+flight_Date_Array[4]+ " has departure time " + flight_time_Array[4]);
+     	       System.out.println("| Enter 6 to choose this-> Date "+flight_Date_Array[5]+ " has departure time " + flight_time_Array[5]);
+     	       System.out.println("| Enter 7 to choose this-> Date "+flight_Date_Array[6]+ " has departure time " + flight_time_Array[6]);
+     	       System.out.println("|--------------------------------------------------------------------------------|");
+     	       System.out.println("|--------------------------------------------------------------------------------|");   
+   	    	   
+   	    	 
      	       Obj1 = new Scanner(System.in); 
      	       choice_date=Obj1.nextInt();  
    	       }
@@ -493,8 +514,10 @@ public class Display extends Flight
         	    System.out.println("Do you want to buy this ticket? ");
         	 try   
         	 {
-        	    System.out.println("Enter 1 to buy this ticket! ");
-        	    System.out.println("Enter 2 to cancel this ticket! ");
+        		System.out.println("|------------------------------------------------------------------|");    
+        	    System.out.println("|---------------Enter 1 to buy this ticket! -----------------------|");
+        	    System.out.println("|---------------Enter 2 to cancel this ticket! --------------------|");
+        	    System.out.println("|------------------------------------------------------------------|"); 
         	    Obj1 = new Scanner(System.in); 
         	    ticket_choice=Obj1.nextInt();
         	    
@@ -506,7 +529,9 @@ public class Display extends Flight
         	  
         	     if(ticket_choice==1)
         	     {
-        	    	 System.out.println("Enter Your Flight Fare -> "+ total_fare+" Thorugh your consol! ");
+        	    	 System.out.println("|------------------------------------------------------------------|"); 
+        	    	 System.out.println("|--Enter Your Flight Fare -> "+ total_fare+" Thorugh your consol! -|");
+        	    	 System.out.println("|------------------------------------------------------------------|"); 
         	    	 Obj1 = new Scanner(System.in); 
              	    amount=Obj1.nextInt();
              	    if (amount==total_fare)
@@ -515,9 +540,12 @@ public class Display extends Flight
         	         // Generate random integers 
         	         ticket_random = rand_num.nextInt(10000);
         	         seat_number=seat_number+1;
-        	         System.out.println("Congratulations Your Ticket and generated successfully! ");
-        	         System.out.println("Your ticket number is "+ticket_random+" ");
-        	         System.out.println("Your seat number is "+seat_number+" ");
+        	         System.out.println("|------------------------------------------------------------------|"); 
+        	         System.out.println("|-----Congratulations Your Ticket and generated successfully! -----|");
+        	         System.out.println("|------------------------------------------------------------------|"); 
+        	         System.out.println("|-----  Your ticket number is "+ticket_random+"--------------------|");
+        	         System.out.println("|-------Your seat number is "+seat_number+"------------------------|");
+        	         System.out.println("|------------------------------------------------------------------|"); 
         	       
               	      availabl_seat=availabl_seat - 1;
               	      
@@ -526,17 +554,22 @@ public class Display extends Flight
         	        int change_ch=0;
         	        
         	        int new_customer=0;
-              	    System.out.println("Dear Customer do you want to change your information! ");
-              	    System.out.println("Enter 1 for Yes and 0 for No !");
+        	        System.out.println("|------------------------------------------------------------------|"); 
+              	    System.out.println("|---------Dear Customer do you want to change your information!----|");
+              	    System.out.println("|---------Enter 1 for Yes and 0 for No !---------------------------|");
+              	    System.out.println("|------------------------------------------------------------------|"); 
               	    ch=Obj1.nextInt();
               	    if(ch==1)
               	    {    
               	    //below is try block 
               	    	try 
               	    	{
-              	    	 System.out.println("Enter 2 to change your Destination! ");
-                  	     System.out.println("Enter 3 to change your Origin(Departure)! ");	
-                  	     System.out.println("Enter 4 to cancel your ticket ! ");
+              	         
+              	    	 System.out.println("|------------------------------------------------------------------|"); 	
+              	    	 System.out.println("|-----------Enter 2 to change your Destination! -------------------|");
+                  	     System.out.println("|-----------Enter 3 to change your Origin(Departure)! -------------|");	
+                  	     System.out.println("|-----------Enter 4 to cancel your ticket ! -----------------------|");
+                  	     System.out.println("|------------------------------------------------------------------|"); 
                   	     
                   	     Obj1 = new Scanner(System.in);
                   	     change_ch=Obj1.nextInt();
@@ -549,7 +582,9 @@ public class Display extends Flight
                   	     if(change_ch==2)
                   	     {
                   	    	Obj1 = new Scanner(System.in); 
-                    	    System.out.println("Enter your Destination (Arrival city)name! ");
+                  	    	System.out.println("|------------------------------------------------------------------|"); 
+                    	    System.out.println("|----------Enter your Destination (Arrival city)name! -------------|");
+                    	    System.out.println("|------------------------------------------------------------------|"); 
                     	    destination=Obj1.nextLine();
                     	    obj2.setDestination(destination);
 
@@ -560,8 +595,9 @@ public class Display extends Flight
                   	     
                   	     if (change_ch==3)
                   	     {
-                  	    	System.out.println(" "); 
-                    	    System.out.println("Enter your Origin(Departure city) Name : ");
+                  	    	System.out.println("|------------------------------------------------------------------|"); 
+                    	    System.out.println("|------------Enter your Origin(Departure city) Name : -------------|");
+                    	    System.out.println("|------------------------------------------------------------------|"); 
                     	    Obj1 = new Scanner(System.in); 
                     	    Origin=Obj1.nextLine();
                     	    obj3.setorigin(Origin);	 
@@ -570,10 +606,12 @@ public class Display extends Flight
                   	     
                   	     if(change_ch==4)
                   	     {
-                  	    	System.out.println("You want to cancel your Ticket! ");
-                  	    	System.out.println("For New customer! ");
-                  	    	System.out.println("Do you want to Buy a ticket ?!");
-                  	    	System.out.println("Enter 1 for Yes and 0 for exit from the system !");
+                  	    	System.out.println("|------------------------------------------------------------------|");  
+                  	    	System.out.println("|--------------You want to cancel your Ticket! --------------------|");
+                  	    	System.out.println("|--------------For New customer! ----------------------------------|");
+                  	    	System.out.println("|--------------Do you want to Buy a ticket ?!----------------------|");
+                  	    	System.out.println("|--------------Enter 1 for Yes and 0 for exit from the system !----|");
+                  	    	System.out.println("|------------------------------------------------------------------|"); 
                   	    	
                   	    	 Obj1 = new Scanner(System.in);
                   	    	 new_customer=Obj1.nextInt(); 
@@ -584,8 +622,10 @@ public class Display extends Flight
                   	    	 
                   	    	if(new_customer==0)
                  	    	 {
-                  	    		System.out.println("You want to exit !");
-                     	    	System.out.println("so system exit! ");
+                  	    		System.out.println("|------------------------------------------------------------------|"); 
+                  	    		System.out.println("|------------You want to exit !------------------------------------|");
+                     	    	System.out.println("|------------so system exit! --------------------------------------|");
+                     	    	System.out.println("|------------------------------------------------------------------|"); 
                      	    	System.exit(0);
                      	    	
                  	    	 }
@@ -599,21 +639,27 @@ public class Display extends Flight
              catch (Exception e) 
               	    	//START catch
               	    	{
-            	           System.out.println("You enter wrong choice!");	
-                           System.out.println("please enter correct choice");
-                           System.out.println("Enter 2 to change your Destination! ");
-                    	   System.out.println("Enter 3 to change your Origin(Departure)! ");	
-                    	   System.out.println("Enter 4 to cancel your ticket ! ");
+            	             System.out.println("|------------------------------------------------------------------|"); 
+            	             System.out.println("|-------------You enter wrong choice!------------------------------|");	
+                             System.out.println("|-------------please enter correct choice--------------------------|");             	   
+                    	     System.out.println("|------------------------------------------------------------------|"); 	
+                	    	 System.out.println("|-----------Enter 2 to change your Destination! -------------------|");
+                    	     System.out.println("|-----------Enter 3 to change your Origin(Departure)! -------------|");	
+                    	     System.out.println("|-----------Enter 4 to cancel your ticket ! -----------------------|");
+                    	     System.out.println("|------------------------------------------------------------------|"); 
                     	     
                     	   Obj1 = new Scanner(System.in);
                     	   change_ch=Obj1.nextInt();
                     	   while(change_ch>4 || change_ch<=1)
                     	   {
-                    		   System.out.println("You enter wrong choice!");	
-                               System.out.println("please enter correct choice");
-                               System.out.println("Enter 2 to change your Destination! ");
-                        	   System.out.println("Enter 3 to change your Origin(Departure)! ");	
-                        	   System.out.println("Enter 4 to cancel your ticket ! ");
+                    		 System.out.println("|------------------------------------------------------------------|"); 
+              	             System.out.println("|-------------You enter wrong choice!------------------------------|");	
+                             System.out.println("|-------------please enter correct choice--------------------------|");             	   
+                      	     System.out.println("|------------------------------------------------------------------|"); 	
+                  	    	 System.out.println("|-----------Enter 2 to change your Destination! -------------------|");
+                      	     System.out.println("|-----------Enter 3 to change your Origin(Departure)! -------------|");	
+                      	     System.out.println("|-----------Enter 4 to cancel your ticket ! -----------------------|");
+                      	     System.out.println("|------------------------------------------------------------------|"); 
                         	     
                         	   Obj1 = new Scanner(System.in);
                         	   change_ch=Obj1.nextInt();  
@@ -623,8 +669,11 @@ public class Display extends Flight
                     	   
                     	     if(change_ch==2)
                     	     {
-                    	    	Obj1 = new Scanner(System.in); 
-                      	    System.out.println("Enter your Destination (Arrival city)name! ");
+                    	    
+                    	    Obj1 = new Scanner(System.in); 
+                    	    System.out.println("|------------------------------------------------------------------|"); 
+                      	    System.out.println("|----------Enter your Destination (Arrival city)name! -------------|");
+                      	    System.out.println("|------------------------------------------------------------------|"); 
                       	    destination=Obj1.nextLine();
                       	    obj2.setDestination(destination);
 
@@ -635,8 +684,9 @@ public class Display extends Flight
                     	     
                     	     if (change_ch==3)
                     	     {
-                    	    	System.out.println(" "); 
-                      	    System.out.println("Enter your Origin(Departure city) Name : ");
+                    	    System.out.println("|------------------------------------------------------------------|"); 
+                      	    System.out.println("|-------------Enter your Origin(Departure city) Name : ------------|");
+                      	    System.out.println("|------------------------------------------------------------------|"); 
                       	    Obj1 = new Scanner(System.in); 
                       	    Origin=Obj1.nextLine();
                       	    obj3.setorigin(Origin);	 
@@ -645,11 +695,15 @@ public class Display extends Flight
                     	     
                     	     if(change_ch==4)
                     	     {
-                    	    	System.out.println("You want to cancel your Ticket! ");
-                    	    	System.out.println("For New customer! ");
-                    	    	System.out.println("Do you want to Buy a ticket ?!");
-                    	    	System.out.println("Enter 1 for Yes and 0 for exit from the system !");
                     	    	
+                    	    	
+                    	    	System.out.println("|------------------------------------------------------------------|");  
+                      	    	System.out.println("|--------------You want to cancel your Ticket! --------------------|");
+                      	    	System.out.println("|--------------For New customer! ----------------------------------|");
+                      	    	System.out.println("|--------------Do you want to Buy a ticket ?!----------------------|");
+                      	    	System.out.println("|--------------Enter 1 for Yes and 0 for exit from the system !----|");
+                      	    	System.out.println("|------------------------------------------------------------------|"); 
+                      	    	
                     	    	 Obj1 = new Scanner(System.in);
                     	    	 new_customer=Obj1.nextInt(); 
                     	    	 if(new_customer==1)
@@ -659,8 +713,11 @@ public class Display extends Flight
                     	    	 
                     	    if(new_customer==0)
                    	    	 {
-                    	    		System.out.println("You want to exit !");
-                       	    	    System.out.println("so system exit! ");
+                    	    	System.out.println("|------------------------------------------------------------------|"); 
+                  	    		System.out.println("|------------You want to exit !------------------------------------|");
+                     	    	System.out.println("|------------so system exit! --------------------------------------|");
+                     	    	System.out.println("|------------------------------------------------------------------|"); 
+                     	    	
                        	    	    System.exit(0);
                        	    	
                    	    	 }
@@ -681,9 +738,11 @@ public class Display extends Flight
         	        } 
              	    
              	    else 
-             	    {
-             	    	System.out.println("You enter wrong amount!");
-             	    	System.out.println("so system exit! ");
+             	    {   
+             	    	System.out.println("|------------------------------------------------------------------|"); 
+             	    	System.out.println("|------------You enter wrong amount!-------------------------------|");
+             	    	System.out.println("|------------so system exit! --------------------------------------|");
+             	    	System.out.println("|------------------------------------------------------------------|"); 
              	    	//System.exit(0);
              	    }
              	    
@@ -691,26 +750,36 @@ public class Display extends Flight
         	     
         	     if(ticket_choice==2)
         	     {
-        	    	 System.out.println("You cancel the transection! ");
-        	    	 System.out.println("System exit!");
+        	    	System.out.println("|------------------------------------------------------------------|"); 
+       	    		System.out.println("|------------You cancel the transection!---------------------------|");
+          	    	System.out.println("|------------so system exit! --------------------------------------|");
+          	    	System.out.println("|------------------------------------------------------------------|"); 
+          	    	
         	    	 System.exit(0);
         	     }
         }
         	 //above is end of try block
         catch (Exception e) 
         {
-          System.out.println("You enter wrong choice!");	
-          System.out.println("please enter correct choice");
-          System.out.println("Enter 1 to buy this ticket! ");
-  	      System.out.println("Enter 2 to cancel this ticket! ");
+            
+        System.out.println("|---------------You enter wrong choice!----------------------------|");	
+        System.out.println("|---------------please enter correct choice------------------------|");  
+  	    System.out.println("|------------------------------------------------------------------|");    
+	    System.out.println("|---------------Enter 1 to buy this ticket! -----------------------|");
+	    System.out.println("|---------------Enter 2 to cancel this ticket! --------------------|");
+	    System.out.println("|------------------------------------------------------------------|"); 
+	    
   	      Obj1 = new Scanner(System.in); 
   	      ticket_choice=Obj1.nextInt();
           while(ticket_choice>2 || ticket_choice<=0)
           {
-        	  System.out.println("You enter wrong choice!");	
-              System.out.println("please enter correct choice");
-              System.out.println("Enter 1 to buy this ticket! ");
-      	      System.out.println("Enter 2 to cancel this ticket! ");
+        	System.out.println("|---------------You enter wrong choice!----------------------------|");	
+            System.out.println("|---------------please enter correct choice------------------------|");  
+        	System.out.println("|------------------------------------------------------------------|");    
+      	    System.out.println("|---------------Enter 1 to buy this ticket! -----------------------|");
+      	    System.out.println("|---------------Enter 2 to cancel this ticket! --------------------|");
+      	    System.out.println("|------------------------------------------------------------------|"); 
+      	    
       	      Obj1 = new Scanner(System.in); 
       	      ticket_choice=Obj1.nextInt();  
           }
